@@ -3,6 +3,7 @@
 import { FC, useState } from 'react'
 import { useDraw } from '../hooks/useDraw'
 import ColorPicker from '@/components/ColorPicker'
+import { getStorage, listAll, ref, uploadBytes } from "firebase/storage";
 
 interface pageProps {}
 
@@ -10,18 +11,31 @@ const page: FC<pageProps> = ({}) => {
   const [color, setColor] = useState<string>('#000')
   const { canvasRef, onMouseDown, clear } = useDraw(drawLine)
 
-  function getImageUrl(){
+  function uploadImage() {
     const canvas = document.getElementById('painting') as HTMLCanvasElement | null;
     if (canvas) {
-      const dataURL = canvas.toDataURL('image/png');
-      console.log(dataURL); // Check the data URL in the console
-  
-      const downloadLink = document.createElement('a');
-      downloadLink.href = dataURL;
-      downloadLink.download = 'drawing.png';
-      document.body.appendChild(downloadLink);
-      downloadLink.click();
-      document.body.removeChild(downloadLink);
+      // Convert data URL to Blob
+      canvas.toBlob(async (blob) => {
+        if (blob) {
+          // Create a root reference
+          const storage = getStorage();
+
+          //listRef is for the number of files
+          const listRef = ref(storage, 'images');
+          const actualList = await listAll(listRef);
+
+          // Specify the file path and name
+          const filePath = 'images/' + (actualList.items.length + 1) + '.png';
+
+          // Create a reference to the file
+          const fileRef = ref(storage, filePath);
+
+          // Upload the Blob to Firebase Storage
+          await uploadBytes(fileRef, blob);
+
+          console.log('Image uploaded successfully!');
+        }
+      }, 'image/png');
     }
   }
 
@@ -65,7 +79,7 @@ const page: FC<pageProps> = ({}) => {
           Clear canvas
         </button>
 
-        <button type='button' className='p-2 rounded-md border border-black' onClick={getImageUrl}>
+        <button type='button' className='p-2 rounded-md border border-black' onClick={uploadImage}>
           Export Drawing
         </button>
       </div>

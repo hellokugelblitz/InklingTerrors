@@ -14,7 +14,7 @@ const ColorPicker: React.FC<ColorPickerProps> = ({ setColor, colors }) => {
             key={index}
             onClick={() => setColor(color)}
             className={`w-12 h-12 rounded-full ${
-              color === 'black' ? 'bg-black' : `bg-${color}-500`
+              color === 'black' ? 'bg-black' : `bg-${color}-300`
             } focus:ring-2 ring-slate-500`}
           ></button>
         ))}
