@@ -31,8 +31,6 @@ For this project I wanted to really get into learning some frameworks I hadnt to
 * NextJS
 * Firebase 🔥 
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- CONTACT -->
 ## Contact
 
