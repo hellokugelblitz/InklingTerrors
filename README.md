@@ -2,7 +2,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="logo.png" alt="Logo" width="80" height="80">
   </a>
 
   <p align="center">
@@ -18,8 +18,6 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
 
 A simply designed web page that allows users to make drawings that are automatically uploaded to the website under the notebook section. Created as part of a final project for a digital humanities class, I also wrote about some of my online research into child psychology. 
 
