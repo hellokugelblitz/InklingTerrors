@@ -4,10 +4,6 @@
   <a href="https://github.com/othneildrew/Best-README-Template">
     <img src="logo.png" alt="Logo">
   </a>
-
-  <p align="center">
-    A real-time online notebook.
-  </p>
   
   <p align="center">
     <br />
