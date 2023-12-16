@@ -27,9 +27,9 @@ A simply designed web page that allows users to make drawings that are automatic
 
 For this project I wanted to really get into learning some frameworks I hadnt touched before. I have heard quite a bit about NextJS and was interested in what you can do with it. I definitely want to take another crack at it now that I have learned a bit more! Maybe the code will be a little cleaner next time. I also learned firebase for this project, it might be a little heavy weight for this kind of project but I really enjoyed learning how to use it. For future personal projects I would like to learn pocketbase or supabase. Of course, as per the usual I also used tailwind to speed up the design side of things.
 
-* [![Next][Next.js]][Next-url]
-* [![Next][Next.js]][Next-url]
-* [![Next][Next.js]][Next-url]
+* Tailwind
+* NextJS
+* Firebase 🔥 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
